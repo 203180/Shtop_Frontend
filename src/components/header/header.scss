@@ -1,0 +1,15 @@
+@import "../../shared/styles/colors/colors.scss";
+@import "../../shared/styles/fonts/fonts.scss";
+
+#header-container {
+  display: flex;
+  flex-direction: row;
+  width: 200vh;
+  height: 10vh;
+  padding: 0.5rem 2rem;
+  background-color: $primary-background-color;
+  font-family: 'Manrope-Regular', sans-serif;
+
+  .logo {
+  }
+}
