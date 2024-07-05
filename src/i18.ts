@@ -2,6 +2,11 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import Backend from 'i18next-http-backend';
 
+const getInitialLanguage = () => {
+    const savedLanguage = localStorage.getItem('language');
+    return savedLanguage || 'mk';
+};
+
 i18n
     .use(Backend) // load translations using http backend
     .use(initReactI18next) // passes i18n down to react-i18next
@@ -9,8 +14,8 @@ i18n
         backend: {
             loadPath: '/locales/{{lng}}/{{lng}}.json', // path to translation files
         },
-        lng: 'en', // default language
-        fallbackLng: 'en', // fallback language if translation not found
+        lng: getInitialLanguage(), // default language
+        fallbackLng: 'mk', // fallback language if translation not found
         interpolation: {
             escapeValue: false, // not needed for React
         },
